@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="为什么需要网络拦截工具通常我们会遇到这样的场景：  线上一个图片有异常，线下修正之后需要发布之前进行测试，有些情况下，QA同学有直接在线上环境测试的需求，只是链接本地资源，通常在windows下有一个很好的工具fiddler可以完成这个功能，当然mac下也有其对应的工具Charles，但是工具收费，在不付费的前提下，使用体验很差。 线上js资源出了bug，线下修复之后通过测试区不好还原场景，因为只">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/05/02/hello-world/index.html">
+<meta property="og:title" content="基于puppeteer的网络拦截工具flyover">
+<meta property="og:url" content="http://yoursite.com/2018/05/04/flyover-intro/index.html">
 <meta property="og:site_name" content="Jerremy&#39;s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="为什么需要网络拦截工具通常我们会遇到这样的场景：  线上一个图片有异常，线下修正之后需要发布之前进行测试，有些情况下，QA同学有直接在线上环境测试的需求，只是链接本地资源，通常在windows下有一个很好的工具fiddler可以完成这个功能，当然mac下也有其对应的工具Charles，但是工具收费，在不付费的前提下，使用体验很差。 线上js资源出了bug，线下修复之后通过测试区不好还原场景，因为只">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-02T09:06:25.629Z">
+<meta property="og:updated_time" content="2018-05-04T04:25:25.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="基于puppeteer的网络拦截工具flyover">
+<meta name="twitter:description" content="为什么需要网络拦截工具通常我们会遇到这样的场景：  线上一个图片有异常，线下修正之后需要发布之前进行测试，有些情况下，QA同学有直接在线上环境测试的需求，只是链接本地资源，通常在windows下有一个很好的工具fiddler可以完成这个功能，当然mac下也有其对应的工具Charles，但是工具收费，在不付费的前提下，使用体验很差。 线上js资源出了bug，线下修复之后通过测试区不好还原场景，因为只">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/02/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/04/flyover-intro/"/>
 
 
 
 
 
-  <title>Hello World | Jerremy's blog</title>
+  <title>基于puppeteer的网络拦截工具flyover | Jerremy's blog</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/flyover-intro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerremyzhang">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">基于puppeteer的网络拦截工具flyover</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T17:06:25+08:00">
-                2018-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T12:24:38+08:00">
+                2018-05-04
               </time>
             
 
@@ -299,15 +299,35 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="为什么需要网络拦截工具"><a href="#为什么需要网络拦截工具" class="headerlink" title="为什么需要网络拦截工具"></a>为什么需要网络拦截工具</h1><p>通常我们会遇到这样的场景：</p>
+<ol>
+<li>线上一个图片有异常，线下修正之后需要发布之前进行测试，有些情况下，QA同学有直接在线上环境测试的需求，只是链接本地资源，通常在windows下有一个很好的工具fiddler可以完成这个功能，当然mac下也有其对应的工具Charles，但是工具收费，在不付费的前提下，使用体验很差。</li>
+<li>线上js资源出了bug，线下修复之后通过测试区不好还原场景，因为只有在线上的数据环境下才能重现bug，但是在线上的代码一般都是混淆过的，调试很不友好（这里不考虑生成soucemap的场景）</li>
+<li>其它需要使用本地资源替换线上资源的情况</li>
+</ol>
+<h1 id="flyover是什么"><a href="#flyover是什么" class="headerlink" title="flyover是什么"></a>flyover是什么</h1><ul>
+<li>flyover是一个简易的本地网络代理工具，基于Puppteer做网络拦截，可以实现对线上压缩代码的调试。</li>
+<li>flyover基于node &amp; puppeteer实现 &amp; 代码开源（当然发布没几天，可能会有很多问题，欢迎大家issue）</li>
+</ul>
+<h1 id="如何使用flyover"><a href="#如何使用flyover" class="headerlink" title="如何使用flyover"></a>如何使用flyover</h1><ol>
+<li>npm install -g flyover</li>
+<li>flyover –help具体细节见<br><a href="https://github.com/JerrZhang/flyover" target="_blank" rel="noopener">https://github.com/JerrZhang/flyover</a> ，欢迎issue 和 star</li>
+</ol>
+<h1 id="flyover-实现原理"><a href="#flyover-实现原理" class="headerlink" title="flyover 实现原理"></a>flyover 实现原理</h1><p>我们知道所有请求，无论是页面请求还是js 发起的各种请求，最终都是通过浏览器软件发起的，服务器响应后，都是响应给浏览器的，那么整个工程可以细分为如下流程（个人理解）：</p>
+<ol>
+<li>请求浏览器发起请求</li>
+<li>浏览器接到请求申请，发起请求到服务器</li>
+<li>服务器处理后响应给浏览器</li>
+<li>浏览器把响应给上层引擎（比如UI引擎&amp; js引擎等）</li>
+</ol>
+<p>puppeteer提供了在第2阶段和第4个阶段的拦截，可以完成浏览器接到请求之后，终端到远程服务器的请求，转而读取本地资源响应给上层引擎；依次来实现对资源的本地化拦截和替换；技术实现也比较简单，只需要在启用拦截后，监听page 对象的request事件进行处理即可，核心代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//启用请求拦截</span><br><span class="line"> this.page.setRequestInterception(true);</span><br><span class="line"> //监听请求事件</span><br><span class="line">this.page.on(&apos;request&apos;, (req) =&gt; &#123;</span><br><span class="line">    //如果包含在拒绝列表中的文件</span><br><span class="line">    let denyFile = this._isInCtrllist(req.url(), ctrlsfiles);</span><br><span class="line">    if (denyFile.getIsDenyFile()) &#123;</span><br><span class="line">        //直接响应本地文件内容</span><br><span class="line">        req.respond(&#123;</span><br><span class="line">            body: denyFile.getFileContent()</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        //其它情况请求继续</span><br><span class="line">        req.continue();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>简单的几行代码就实现了一个初级的网络拦截工具，是不是很简单实用？</p>
+<p>完整代码 <a href="https://github.com/JerrZhang/flyover" target="_blank" rel="noopener">https://github.com/JerrZhang/flyover</a></p>
+<h1 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h1><ol>
+<li>只能使用chrome浏览器来测试，这是由于puppeteer本身的限制决定的</li>
+<li>还无法支持sourcemap，2.0中会支持添加sourcemap来进行调试</li>
+</ol>
 
       
     </div>
@@ -332,15 +352,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/05/02/capture-react-books/" rel="next" title="使用Puppeteer抓取受限网站">
+                <i class="fa fa-chevron-left"></i> 使用Puppeteer抓取受限网站
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/02/capture-react-books/" rel="prev" title="使用Puppeteer抓取受限网站">
-                使用Puppeteer抓取受限网站 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -459,7 +479,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么需要网络拦截工具"><span class="nav-number">1.</span> <span class="nav-text">为什么需要网络拦截工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flyover是什么"><span class="nav-number">2.</span> <span class="nav-text">flyover是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用flyover"><span class="nav-number">3.</span> <span class="nav-text">如何使用flyover</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flyover-实现原理"><span class="nav-number">4.</span> <span class="nav-text">flyover 实现原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不足"><span class="nav-number">5.</span> <span class="nav-text">不足</span></a></li></ol></div>
             
 
           </div>
